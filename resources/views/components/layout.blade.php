@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Laravel'
+    'title' => 'Laravel',
 ])
 
 <!DOCTYPE html>

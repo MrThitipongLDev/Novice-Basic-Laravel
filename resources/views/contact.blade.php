@@ -1,3 +1,3 @@
-<x-layout $title = "contact">
+<x-layout title="contact">
     Contact US
 </x-layout>

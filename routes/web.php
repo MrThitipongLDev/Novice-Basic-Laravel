@@ -3,7 +3,13 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');   //อยู่ใน resources/views/welcome.blade.php
+    return view('welcome', [
+        'tasks' => [
+            'abcd',
+            'efgh',
+            'ijkl'
+        ],
+    ]);   //อยู่ใน resources/views/welcome.blade.php
 });
 
 // Route::view('/about', 'about', [

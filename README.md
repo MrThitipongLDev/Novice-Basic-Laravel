@@ -31,3 +31,65 @@ attributes->merge([])   เอา class เก่าใหม่ที่เต�
 
 
 Pass Data to Views
+routes/web.php
+// Route::view('/about', 'about', [
+//     'abc' => 'ssss',
+//     'name' => 'aek',
+//     'pass' => request('pass'),
+// ]);
+
+Route::get('/about', function () {
+    return view('about', [
+    'abc' => 'ssss',
+    'name' => 'aek',
+    'pass' => request('pass'),
+    ]);
+});
+
+
+
+
+Blade Directives
+routes/web.php
+
+Route::get('/', function () {
+    return view('welcome', [
+        'tasks' => [
+            'abcd',
+            'efgh',
+            'ijkl'
+        ],
+    ]); 
+
+
+views/welcome.blade.php
+
+{{$tasks}}
+<?php var_dump($tasks) ?>
+<?php die(var_dump($tasks)) ?>
+
+@dump($tasks);
+@dd($tasks);
+
+<?php if (count($tasks)) : ?>
+<p>มีกี่ <?php echo count($tasks) ?>
+<?php endif; ?>
+
+@if(count($tasks))
+<p>มีกี่ <?php echo count($tasks) ?>
+@endif
+
+@foreach ($tasks as $task)
+    <li>{{ $task }}</li>
+@endforeach
+
+
+@unless( count($tasks))
+    <p>ไม่มี task </p>
+@endunless
+
+@forelse($tasks as $task)
+    <li>{{$task}}</li>
+    @empty
+    <p>ไม่มี task</p>
+@endforelse

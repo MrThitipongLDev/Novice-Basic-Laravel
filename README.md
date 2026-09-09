@@ -22,3 +22,5 @@ Route::view('/contact', 'contact');
 
 Layout 101
 
+views/components/layout.blade.php   สร้าง
+

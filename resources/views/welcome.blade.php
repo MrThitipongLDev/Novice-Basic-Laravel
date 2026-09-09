@@ -1,3 +1,3 @@
-<x-layout $title="home">
+<x-layout>
     Hello World
 </x-layout>

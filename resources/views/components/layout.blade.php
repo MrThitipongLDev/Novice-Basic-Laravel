@@ -1,3 +1,7 @@
+@props([
+    'title' => 'Laravel'
+])
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

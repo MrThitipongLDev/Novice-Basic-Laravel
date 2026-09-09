@@ -10,3 +10,5 @@ Route::get('/about', function () {
     return view('about');   
 });
 
+//แบบย่อ
+Route::view('/contact', 'contact');

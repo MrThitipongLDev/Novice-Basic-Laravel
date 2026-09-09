@@ -9,3 +9,9 @@ rm -rf temp-laravel
 Routing 101
 routes/web.app
 
+ทำ about,welcome link ไปกลับได้
+ต้องใส่ใน routes/web.php ชี้ ไปหา ใน resources/views/..... 
+
+
+Layout 101
+

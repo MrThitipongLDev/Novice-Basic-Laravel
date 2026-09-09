@@ -24,3 +24,10 @@ Layout 101
 
 views/components/layout.blade.php   สร้าง
 
+ทำ prop
+
+card.blade.php
+attributes->merge([])   เอา class เก่าใหม่ที่เตรียมไว้ มารวมกันได้
+
+
+Pass Data to Views

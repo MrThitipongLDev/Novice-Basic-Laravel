@@ -6,8 +6,18 @@ Route::get('/', function () {
     return view('welcome');   //อยู่ใน resources/views/welcome.blade.php
 });
 
+// Route::view('/about', 'about', [
+//     'abc' => 'ssss',
+//     'name' => 'aek',
+//     'pass' => request('pass'),
+// ]);
+
 Route::get('/about', function () {
-    return view('about');   
+    return view('about', [
+    'abc' => 'ssss',
+    'name' => 'aek',
+    'pass' => request('pass'),
+    ]);
 });
 
 //แบบย่อ

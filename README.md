@@ -93,3 +93,55 @@ views/welcome.blade.php
     @empty
     <p>ไม่มี task</p>
 @endforelse
+
+
+Forms
+views/ideas.blade.php
+
+    <form action="">
+        <textarea name="idea"></textarea>
+        <button type="submit">save</button>
+    </form>
+
+url จะเป็น ?name=สิ่งที่พิม
+name ในนี้ ชื่อ idea จะเป็น ?idea=aojdpoajsdopj
+
+======
+    <form method="POST" action="/ideas">
+        @csrf
+        <textarea name="idea"></textarea>
+        <button type="submit">save</button>
+    </form>
+
+
+
+routes/web.php
+Route::post('/ideas', function () {
+    dd(request()->all());
+});
+
+array:2 [▼ // routes/web.php:34
+  "_token" => "l1W04lVEZ1RwAbQn5mbDgJGApFjLtZBpItFM2jVY"
+  "idea" => "zxczxczxc"
+]
+
+
+
+
+// forms
+Route::get('/ideas', function () {
+    $ideas = session()->get('ideas', []);
+    // dd($ideas);
+    return view('ideas', [
+        'ideas' => $ideas
+    ]);
+});
+
+Route::post('/ideas', function () {
+    $idea = request('idea');
+
+    session()->push('ideas', $idea);
+
+    return redirect('ideas');
+});
+

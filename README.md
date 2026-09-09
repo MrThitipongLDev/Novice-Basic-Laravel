@@ -145,3 +145,8 @@ Route::post('/ideas', function () {
     return redirect('ideas');
 });
 
+Route::get('/ideas/delete', function () {
+    session()->forget('ideas');
+    return redirect('/ideas');
+});
+

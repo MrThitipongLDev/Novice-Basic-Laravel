@@ -12,6 +12,13 @@ routes/web.app
 ทำ about,welcome link ไปกลับได้
 ต้องใส่ใน routes/web.php ชี้ ไปหา ใน resources/views/..... 
 
+Route::get('/about', function () {
+    return view('about');   
+});
+
+//แบบย่อ
+Route::view('/contact', 'contact');
+
 
 Layout 101
 
